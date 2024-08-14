@@ -132,6 +132,17 @@ class Data {
 
     return postData;
   }
+  orderPetBody() {
+    const postData = {
+        "id": 5,
+        "petId": 66666,
+        "quantity": 1,
+        "shipDate": "2024-08-14T17:03:42.124Z",
+        "status": "placed",
+        "complete": true
+    }
+    return postData;
+}
 }
 
 export default Data;

@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-08-14T17:13:21.187Z",
+    "end": "2024-08-14T17:13:21.746Z",
+    "duration": 559,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ca375889-9c7a-4a6f-a6b6-1a2f514564a9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\store-Tests.cy.js",
+      "file": "cypress\\e2e\\tests\\store-Tests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b8209abf-11d9-4029-a801-598d239c25ea",
+          "title": "User Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Petstore için oluşturma",
+              "fullTitle": "User Tests Petstore için oluşturma",
+              "timedOut": null,
+              "duration": 166,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: url + \"store/order\",\n  body: data.orderPetBody()\n}).then(response => {\n  console.log(response);\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "35fbbcd2-b4ea-4638-9467-571709f5e54e",
+              "parentUUID": "b8209abf-11d9-4029-a801-598d239c25ea",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "ID ile bulma",
+              "fullTitle": "User Tests ID ile bulma",
+              "timedOut": null,
+              "duration": 332,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('GET', url + \"store/order/5\" + data.orderPetBody().id.toString()).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('id', data.orderPetBody().id);\n});",
+              "err": {
+                "message": "AssertionError: expected { Object (id, petId, ...) } to have property 'id' of 5, but got 55",
+                "estack": "AssertionError: expected { Object (id, petId, ...) } to have property 'id' of 5, but got 55\n    at Context.eval (webpack:///./cypress/e2e/tests/store-Tests.cy.js:24:38)",
+                "diff": "- 55\n+ 5\n"
+              },
+              "uuid": "32d65227-c814-485b-bad5-554bc4dbdbc1",
+              "parentUUID": "b8209abf-11d9-4029-a801-598d239c25ea",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "35fbbcd2-b4ea-4638-9467-571709f5e54e"
+          ],
+          "failures": [
+            "32d65227-c814-485b-bad5-554bc4dbdbc1"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 498,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

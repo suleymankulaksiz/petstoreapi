@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-08-14T17:23:35.011Z",
+    "end": "2024-08-14T17:23:35.368Z",
+    "duration": 357,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b30e2e4d-d8ae-4090-8e58-dbced5a32da5",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\store-Tests.cy.js",
+      "file": "cypress\\e2e\\tests\\store-Tests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1343a130-9b53-4067-a314-adcffe705dca",
+          "title": "User Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create PetStore Order",
+              "fullTitle": "User Tests Create PetStore Order",
+              "timedOut": null,
+              "duration": 168,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"POST\",\n  url: url + storeWay,\n  body: data.orderPetBody()\n}).then(response => {\n  console.log(response);\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "0f15834a-6788-4cc2-b1fa-7b30d7ada522",
+              "parentUUID": "1343a130-9b53-4067-a314-adcffe705dca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Find Order ID",
+              "fullTitle": "User Tests Find Order ID",
+              "timedOut": null,
+              "duration": 159,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"GET\", url + storeWay + data.orderPetBody().id.toString()).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property(\"id\", data.orderPetBody().id);\n});",
+              "err": {},
+              "uuid": "ddf3b5eb-9638-46a6-a99f-f5709b61e688",
+              "parentUUID": "1343a130-9b53-4067-a314-adcffe705dca",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0f15834a-6788-4cc2-b1fa-7b30d7ada522",
+            "ddf3b5eb-9638-46a6-a99f-f5709b61e688"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 327,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

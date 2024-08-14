@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-08-14T17:12:43.536Z",
+    "end": "2024-08-14T17:12:45.278Z",
+    "duration": 1742,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fcbdeb25-d844-41b2-8a05-5a6c8bfbe910",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\pet-Tests.cy.js",
+      "file": "cypress\\e2e\\tests\\pet-Tests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "19bc3947-695b-4855-8451-454515789983",
+          "title": "User Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check missing animal",
+              "fullTitle": "User Tests Check missing animal",
+              "timedOut": null,
+              "duration": 813,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"GET\",\n  url: url + \"pet/44445555555555\",\n  failOnStatusCode: false // 404 hatası vermesini engellemek için\n}).then(response => {\n  expect(response.status).to.eq(404);\n});",
+              "err": {},
+              "uuid": "69f57e54-851a-457f-9aeb-24b4e8fd823a",
+              "parentUUID": "19bc3947-695b-4855-8451-454515789983",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create New Animal",
+              "fullTitle": "User Tests Create New Animal",
+              "timedOut": null,
+              "duration": 175,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"POST\",\n  url: url + \"pet\",\n  body: data.createPostAnimal()\n}).then(response => {\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "7f97f6ef-0e18-4833-bb38-14f2b6cbd344",
+              "parentUUID": "19bc3947-695b-4855-8451-454515789983",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check New Animal",
+              "fullTitle": "User Tests Check New Animal",
+              "timedOut": null,
+              "duration": 171,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"GET\",\n  url: url + \"pet/4444\"\n}).then(response => {\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "352b58e8-cc8c-4a90-a858-3d0ece12cf9f",
+              "parentUUID": "19bc3947-695b-4855-8451-454515789983",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Update Animal Name ",
+              "fullTitle": "User Tests Update Animal Name ",
+              "timedOut": null,
+              "duration": 171,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"PUT\",\n  url: url + \"pet\",\n  body: data.PutAnimal(\"Çirkin\")\n}).then(response => {\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "07af8507-90a4-4191-8ff2-8fc60591c388",
+              "parentUUID": "19bc3947-695b-4855-8451-454515789983",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete Success Animal",
+              "fullTitle": "User Tests Delete Success Animal",
+              "timedOut": null,
+              "duration": 172,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"DELETE\",\n  url: url + \"pet/4444\",\n  headers: data.headerPayload()\n}).then(response => {\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "a9b43be3-a287-4f1e-81c8-a91ec1347e54",
+              "parentUUID": "19bc3947-695b-4855-8451-454515789983",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete expected 404 animal",
+              "fullTitle": "User Tests Delete expected 404 animal",
+              "timedOut": null,
+              "duration": 170,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"DELETE\",\n  url: url + \"pet/44445555555555\",\n  failOnStatusCode: false // 404 hatası vermesini engellemek için\n}).then(response => {\n  expect(response.status).to.eq(404);\n});",
+              "err": {},
+              "uuid": "3247b241-6988-435e-b74e-86ea97538ae0",
+              "parentUUID": "19bc3947-695b-4855-8451-454515789983",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "69f57e54-851a-457f-9aeb-24b4e8fd823a",
+            "7f97f6ef-0e18-4833-bb38-14f2b6cbd344",
+            "352b58e8-cc8c-4a90-a858-3d0ece12cf9f",
+            "07af8507-90a4-4191-8ff2-8fc60591c388",
+            "a9b43be3-a287-4f1e-81c8-a91ec1347e54",
+            "3247b241-6988-435e-b74e-86ea97538ae0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1672,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
